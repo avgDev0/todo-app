@@ -19,6 +19,7 @@ export default function TodoList({ todos, onDelete }: TodoListProps) {
       <List dense>
         {todos.map((todo, index) => (
           <ListItem
+            key={todo}
             secondaryAction={
               <IconButton edge='end' onClick={() => onDelete(index)}>
                 <DeleteIcon color='error' />
