@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles'
-import TodoInput from '../components/TodoInput';
-import TodoList from '../components/TodoList';
+import TodoInput from '../../components/TodoInput';
+import TodoList from '../../components/TodoList';
 
 const AppContainer = styled(Container)(({ theme }) => ({
   width: '100vw',
