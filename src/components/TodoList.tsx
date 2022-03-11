@@ -2,18 +2,19 @@ import React from 'react'
 import { List, ListItem, IconButton, ListItemText } from '@mui/material';
 import { Delete as DeleteIcon } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-
-type TodoListProps = {
-  todos: string[];
-  onDelete: (todoIndex: number) => void;
-};
+import { useDispatch, useSelector } from 'react-redux';
+import { getTodos } from '../containers/Todos/store/selectors';
+import { actions } from '../containers/Todos/store/reducer';
 
 const Container = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
 }));
 
-export default function TodoList({ todos, onDelete }: TodoListProps) {
+export default function TodoList() {
+  const dispatch = useDispatch();
+  const todos: string[] = useSelector(getTodos);
+
   return (
     <Container>
       <List dense>
@@ -21,7 +22,7 @@ export default function TodoList({ todos, onDelete }: TodoListProps) {
           <ListItem
             key={todo}
             secondaryAction={
-              <IconButton edge='end' onClick={() => onDelete(index)}>
+              <IconButton edge='end' onClick={() => dispatch(actions.deleteTodo(index))}>
                 <DeleteIcon color='error' />
               </IconButton>
             }

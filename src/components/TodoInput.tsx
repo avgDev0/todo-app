@@ -6,20 +6,19 @@ import {
   InputAdornment,
   IconButton,
 } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { actions } from '../containers/Todos/store/reducer';
 
-type TodoInputProps = {
-  onAddClick: (todo: string) => void;
-};
-
-export default function TodoInput({ onAddClick }: TodoInputProps) {
+export default function TodoInput() {
+  const dispatch = useDispatch();
   const [value, setValue] = useState<string>('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setValue(e.currentTarget.value);
 
   const handleAddClik = () => {
-    onAddClick(value);
+    dispatch(actions.addTodo(value));
     setValue('');
   }
 
