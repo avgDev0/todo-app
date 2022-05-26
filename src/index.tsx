@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './containers/Todos/store';
+import Todos from './containers/Todos';
 import './index.css';
-import App from './containers/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Todos />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
