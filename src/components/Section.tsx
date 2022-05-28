@@ -1,10 +1,11 @@
-import { Paper } from '@mui/material'
 import React from 'react'
+import { Paper } from '@mui/material'
+import SectionHeader from '../components/SectionHeader'
 
 export default function Section() {
   return (
     <Paper>
-      section content
+      <SectionHeader title='test' />
     </Paper>
   )
 }

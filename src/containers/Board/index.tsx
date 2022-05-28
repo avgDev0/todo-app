@@ -3,14 +3,14 @@ import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Section from '../../components/Section';
 
-const Board = styled(Container)(() => ({
+const Board = styled(Container)({
   width: '100%',
   height: '100%',
   padding: 0,
   display: 'flex',
   flexGrow: '1',
   alignItems: 'center',
-}));
+});
 
 const TodosApp = () => {
   return (
