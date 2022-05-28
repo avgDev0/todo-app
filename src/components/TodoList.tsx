@@ -3,8 +3,8 @@ import { List, ListItem, IconButton, ListItemText } from '@mui/material';
 import { Delete as DeleteIcon } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTodos } from '../containers/Todos/store/selectors';
-import { actions } from '../containers/Todos/store/reducer';
+import { getTodos } from '../store/selectors';
+import { actions } from '../store/reducer';
 
 const Container = styled('div')(({ theme }) => ({
   width: '100%',

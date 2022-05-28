@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import { actions } from '../containers/Todos/store/reducer';
+import { actions } from '../store/reducer';
 
 export default function TodoInput() {
   const dispatch = useDispatch();
