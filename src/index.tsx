@@ -4,7 +4,7 @@ import { Container, ThemeProvider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import store from './store';
-import Board from './containers/Board'
+import Boards from './containers/Boards'
 import TopBar from './containers/TopBar';
 
 import './index.css';
@@ -23,7 +23,7 @@ ReactDOM.render(
       <Provider store={store}>
         <AppContainer className='app'>
           <TopBar />
-          <Board />
+          <Boards />
         </AppContainer>
       </Provider>
     </ThemeProvider>

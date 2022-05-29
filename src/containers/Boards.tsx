@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Section from '../../components/Section';
+import Section from '../components/Section';
+import NoBoard from '../components/NoBoard';
 
 const Board = styled('div')(({ theme }) => ({
   width: '100%',
@@ -15,11 +16,15 @@ const Board = styled('div')(({ theme }) => ({
 }));
 
 const TodosApp = () => {
-  return (
-    <Board className="board">
-      {[0, 1, 2].map(d => <Section />)}
-    </Board>
-  );
+  const boards: string[] = [];
+  return boards.length > 0 ?
+    (
+      <Board className="board">
+        {boards.map(d => <Section />)}
+      </Board>
+    ) : (
+      <NoBoard />
+    )
 }
 
 export default TodosApp;
