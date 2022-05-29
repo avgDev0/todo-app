@@ -7,9 +7,9 @@ const Container = styled(Box)(({ theme }) => ({
   background: theme.palette.secondary.main,
 }));
 
-const SectionContent: React.FC = () => (
+const SectionContent: React.FC = ({ children }) => (
   <Container>
-    content
+    {children}
   </Container>
 )
 
