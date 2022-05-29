@@ -8,7 +8,7 @@ import { TodoStatus } from '../enums';
 const Paper = styled(
   (props) => <MUIPaper {...props} elevation={3} />,
 )(({ theme }) => ({
-  minWidth: 300,
+  minWidth: 400,
   height: '100%',
   display: 'flex',
   flexDirection: 'column',

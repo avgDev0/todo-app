@@ -19,6 +19,7 @@ const theme = createTheme({
         root: {
           backgroundColor: '#354259',
           color: 'white',
+          fontWeight: 'bold',
         }
       },
     },
