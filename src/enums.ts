@@ -1,5 +1,5 @@
 export enum TodoStatus {
-  TODO,
-  DOING,
-  DONE,
+  TODO = 'todo',
+  DOING = 'doing',
+  DONE = 'done',
 }

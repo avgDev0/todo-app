@@ -2,6 +2,12 @@ import * as React from 'react';
 import { styled, Box, InputLabel, MenuItem, FormControl } from '@mui/material';
 import MUISelect, { SelectChangeEvent, SelectProps } from '@mui/material/Select';
 
+type Props = {
+  options: { key: string; value: string; }[];
+  onChange: (boardId: string) => void;
+  selected?: string;
+}
+
 const Select = styled(
   (props: SelectProps) => (<MUISelect {...props} />),
 )(({ theme }) => ({
@@ -10,11 +16,10 @@ const Select = styled(
   },
 }));
 
-export default function BasicSelect() {
-  const [board, setBoard] = React.useState('');
-
-  const handleChange = (event: SelectChangeEvent<unknown>) => {
-    setBoard(event.target.value as string);
+export default function BasicSelect({ options, selected, onChange }: Props) {
+  const handleChange = (e: SelectChangeEvent<unknown>) => {
+    const newValue = e.target.value as string;
+    onChange(newValue);
   };
 
   return (
@@ -24,13 +29,13 @@ export default function BasicSelect() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={board}
+          value={selected ?? ''}
           label="Age"
           onChange={handleChange}
+          defaultValue={selected}
+          disabled={!selected}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          {options.map(o => <MenuItem key={o.value} value={o.value}>{o.key}</MenuItem>)}
         </Select>
       </FormControl>
     </Box>

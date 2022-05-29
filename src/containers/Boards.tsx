@@ -1,8 +1,10 @@
 import React from 'react';
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
 import Section from '../components/Section';
 import NoBoard from '../components/NoBoard';
+import { getBoards, getSelectedBoard } from '../store/selectors'
 
 const Board = styled('div')(({ theme }) => ({
   width: '100%',
@@ -15,16 +17,17 @@ const Board = styled('div')(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-const TodosApp = () => {
-  const boards: string[] = [];
-  return boards.length > 0 ?
+const Boards = () => {
+  const currentBoard = useSelector(getSelectedBoard);
+
+  return currentBoard ?
     (
       <Board className="board">
-        {boards.map(d => <Section />)}
+        {currentBoard.sections.map(section => <Section key={`${currentBoard.id}.${section}`} name={section} />)}
       </Board>
     ) : (
       <NoBoard />
     )
 }
 
-export default TodosApp;
+export default Boards;

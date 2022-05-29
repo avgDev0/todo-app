@@ -1,10 +1,17 @@
 import React from 'react'
-import { AppBar } from '@mui/material'
+import { AppBar, SelectChangeEvent } from '@mui/material'
 import Select from '../components/Select';
+import { useSelector } from 'react-redux';
+import { getBoards, getSelectedBoard } from '../store/selectors';
 
-type Props = {}
+function TopBar() {
+  const boards = useSelector(getBoards);
+  const selectedBoard = useSelector(getSelectedBoard);
 
-function TopBar({ }: Props) {
+  const handleChange = (id: string) => {
+    console.log(id);
+  }
+
   return (
     <AppBar
       className='topBar'
@@ -17,7 +24,7 @@ function TopBar({ }: Props) {
       }}
       elevation={0}
     >
-      <Select />
+      <Select options={boards.map(b => ({ key: b.name, value: b.id }))} selected={selectedBoard?.id} onChange={handleChange} />
     </AppBar>
   )
 }

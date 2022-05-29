@@ -5,6 +5,10 @@ import SectionContent from '../components/SectionContent'
 import TodoCard from './TodoCard';
 import { TodoStatus } from '../enums';
 
+type SectionProps = {
+  name: string;
+};
+
 const Paper = styled(
   (props) => <MUIPaper {...props} elevation={3} />,
 )(({ theme }) => ({
@@ -14,10 +18,10 @@ const Paper = styled(
   flexDirection: 'column',
 }));
 
-export default function Section() {
+export default function Section({ name }: SectionProps) {
   return (
     <Paper>
-      <SectionHeader title='test' />
+      <SectionHeader title={name} />
       <SectionContent>
         {['1'].map(d => <TodoCard id={d} status={TodoStatus.DOING} boardId='111' content='testCard' />)}
       </SectionContent>

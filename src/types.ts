@@ -10,4 +10,5 @@ export type Todo = {
 export type Board = {
   id: string;
   name: string;
+  sections: string[];
 };
