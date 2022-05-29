@@ -18,8 +18,12 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: '#354259',
-          color: 'white',
+          color: '#ECE5C7',
           fontWeight: 'bold',
+          ':hover': {
+            backgroundColor: '#ECE5C7',
+            color: '#354259',
+          },
         }
       },
     },

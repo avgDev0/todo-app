@@ -5,4 +5,9 @@ export type Todo = {
   status: TodoStatus;
   boardId: string;
   content: string;
-}
+};
+
+export type Board = {
+  id: string;
+  name: string;
+};
