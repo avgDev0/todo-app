@@ -14,18 +14,16 @@ const Typography = styled(MUITypography)(({ theme }) => ({
   justifyContent: 'flex-start',
   alignItems: 'flex-end',
   padding: theme.spacing(1),
+  color: theme.palette.text.secondary,
 }));
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
-  console.log({ title });
-  return (
-    <>
-      <Typography>
-        {title}
-      </Typography>
-      <Divider />
-    </>
-  )
-}
+const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => (
+  <>
+    <Typography>
+      {title}
+    </Typography>
+    <Divider />
+  </>
+)
 
 export default SectionHeader;

@@ -5,15 +5,16 @@ import { styled } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import store from './store';
 import Board from './containers/Board'
+import TopBar from './containers/TopBar';
 
 import './index.css';
-import theme from './theme';
+import theme from './Theme';
 
 const AppContainer = styled(Container)({
   width: '100vw',
   height: '100vh',
-  display: 'flex',
-  justifyContent: 'space-evenly',
+  display: 'grid',
+  gridTemplateRows: 'auto 1fr',
 });
 
 ReactDOM.render(
@@ -21,6 +22,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme} >
       <Provider store={store}>
         <AppContainer className='app'>
+          <TopBar />
           <Board />
         </AppContainer>
       </Provider>

@@ -3,14 +3,15 @@ import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Section from '../../components/Section';
 
-const Board = styled(Container)({
+const Board = styled('div')(({ theme }) => ({
   width: '100%',
-  height: '100%',
   padding: 0,
   display: 'flex',
-  flexGrow: '1',
-  alignItems: 'center',
-});
+  order: 2,
+  justifyContent: 'center',
+  gap: theme.spacing(2),
+  paddingTop: theme.spacing(1),
+}));
 
 const TodosApp = () => {
   return (
