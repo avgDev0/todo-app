@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Container, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import store from './store';
-import { AppBar } from './containers/AppBar'; //TODO: Fix this
+import AppBar from './containers/AppBar';
 import './index.css';
 import Boards from './containers/Boards';
 

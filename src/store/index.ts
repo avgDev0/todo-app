@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import TodosReducer from '../containers/Todos/store/reducer';
+import todosReducer from '../containers/Todos/store/reducer';
+import boardsReducer from '../containers/Boards/store/reducer';
 
 const store = configureStore({
   reducer: {
-    todos: TodosReducer,
+    todos: todosReducer,
+    boards: boardsReducer,
   },
 });
 
