@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import type { IState } from './index';
+import type { IState } from '../../../store';
 
 const todosState = (state: IState) => state.todos;
 
