@@ -5,6 +5,7 @@ import { Container, createTheme, CssBaseline, ThemeProvider } from '@mui/materia
 import store from './store';
 import { AppBar } from './containers/AppBar'; //TODO: Fix this
 import './index.css';
+import Boards from './containers/Boards';
 
 const theme = createTheme({
   palette: {
@@ -19,10 +20,13 @@ ReactDOM.render(
         <CssBaseline />
         <Container sx={{
           width: '100%',
-          height: '100%',
-          flexDirection: 'column',
-        }}>
+          height: '100vh',
+          display: 'grid',
+          gridTemplateRows: 'auto 1fr'
+        }}
+          className="app-container">
           <AppBar />
+          <Boards />
         </Container>
       </ThemeProvider>
     </Provider>

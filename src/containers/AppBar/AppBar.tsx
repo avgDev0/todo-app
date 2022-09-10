@@ -1,14 +1,15 @@
 import React from 'react'
-import { Box, Toolbar, AppBar as MUIAppBar, Typography } from '@mui/material'
-import TodoInput from '../../components/TodoInput'
+import { Box, Toolbar, AppBar as MUIAppBar, Typography, Button } from '@mui/material'
 
 export default function AppBar() {
   return (
-    <Box sx={{ flex: '0 0 auto' }}>
-      <MUIAppBar>
+    <Box className="appBar-container" sx={{ height: '75px' }}>
+      <MUIAppBar sx={{ height: 'inherit' }}>
         <Toolbar sx={{ justifyContent: 'space-between', mt: 1, mb: 1 }}>
           <Typography variant='h4'>Todo App</Typography>
-          <TodoInput />
+          <Button onClick={console.log} variant='contained' sx={{ fontWeight: 'bold' }}>
+            Add TODO
+          </Button>
         </Toolbar>
       </MUIAppBar>
     </Box>
