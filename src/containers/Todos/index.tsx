@@ -5,8 +5,8 @@ import TodoInput from '../../components/TodoInput';
 import TodoList from '../../components/TodoList';
 
 const AppContainer = styled(Container)(({ theme }) => ({
-  width: '100vw',
-  height: '100vh',
+  width: '100%',
+  height: 'auto',
   padding: theme.spacing(2),
 }));
 
